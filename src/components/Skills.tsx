@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Star, Code, Database, Shield, Brain, Heart } from 'lucide-react';
+import { Star, Code, Database, Shield, Brain, Heart, LayoutGrid } from 'lucide-react';
 
 interface SkillCategory {
   title: string;
@@ -37,15 +37,15 @@ const Skills: React.FC<SkillsProps> = ({ categories }) => {
     <section className="mb-6 animate-slide-in" style={{ animationDelay: '0.5s' }}>
       <div className="flex items-center gap-2 mb-3">
         <div className="p-2 bg-cv-primary text-white rounded-full">
-          <Star size={18} />
+          <LayoutGrid size={18} />
         </div>
         <h2 className="text-2xl font-semibold">Skills</h2>
       </div>
 
       <div className="bg-white p-4 rounded-lg border border-gray-100 shadow-lg hover:shadow-xl transition-all duration-300">
-        <div className="grid grid-cols-1 gap-3">
+        <div className="grid grid-cols-3 gap-4">
           {categories.map((category, catIndex) => (
-            <div key={catIndex} className={catIndex > 0 ? "mt-2" : ""}>
+            <div key={catIndex} className="flex flex-col h-full">
               <h3 className="text-sm font-semibold text-cv-primary mb-2 flex items-center gap-1">
                 <span className="p-1 bg-cv-primary bg-opacity-10 rounded-md text-cv-primary">
                   {getCategoryIcon(category.title)}
@@ -53,7 +53,7 @@ const Skills: React.FC<SkillsProps> = ({ categories }) => {
                 {category.title}
               </h3>
               
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-2 flex-grow">
                 {category.skills.map((skill, skillIndex) => (
                   <div 
                     key={skillIndex}
