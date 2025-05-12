@@ -1,6 +1,9 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
 @layer base {
   :root {
@@ -96,6 +99,83 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-cv-background text-cv-text;
+    font-family: 'Poppins', sans-serif;
   }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+.cv-container {
+  width: 210mm; /* A4 width */
+  min-height: 297mm; /* A4 height */
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: white;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+}
+
+@media print {
+  body {
+    background-color: white;
+  }
+  
+  .cv-container {
+    box-shadow: none;
+    width: 100%;
+    height: auto;
+    padding: 0;
+  }
+  
+  .no-print {
+    display: none;
+  }
+}
+
+.skill-bar {
+  position: relative;
+  height: 8px;
+  background-color: #F1F1F1;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.skill-progress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: linear-gradient(90deg, #E86A33 0%, #F8CB9C 100%);
+  animation: progress-fill 1s ease-out forwards;
+  border-radius: 4px;
+}
+
+.timeline-item {
+  position: relative;
+  padding-left: 28px;
+  margin-bottom: 1.5rem;
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 3px;
+  background-color: #F1F1F1;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: -5px;
+  top: 4px;
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+  background-color: #E86A33;
+  border: 3px solid white;
+  z-index: 1;
 }
