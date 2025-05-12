@@ -17,13 +17,13 @@ const Summary: React.FC<SummaryProps> = ({ text }) => {
         <h2 className="text-2xl font-semibold">Summary</h2>
       </div>
       
-      <div className="bg-white p-4 rounded-lg border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300">
+      <div className="bg-white p-5 rounded-lg border border-gray-100 shadow-lg hover:shadow-xl transition-all duration-300 animate-glow">
         <TooltipProvider>
           <Tooltip>
             <TooltipTrigger asChild>
               <p className="text-gray-700 leading-relaxed">{text}</p>
             </TooltipTrigger>
-            <TooltipContent side="bottom" className="max-w-md">
+            <TooltipContent side="bottom" className="max-w-md bg-cv-primary text-white">
               <p>This summary highlights your key qualifications and approach to design</p>
             </TooltipContent>
           </Tooltip>

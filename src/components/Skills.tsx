@@ -1,12 +1,12 @@
 
-import React, { useState } from 'react';
-import { Code, Star } from 'lucide-react';
+import React from 'react';
+import { Star, Code, Database, Shield } from 'lucide-react';
 
 interface SkillCategory {
   title: string;
   skills: Array<{
     name: string;
-    level: number;
+    level?: number;
   }>;
 }
 
@@ -15,7 +15,21 @@ interface SkillsProps {
 }
 
 const Skills: React.FC<SkillsProps> = ({ categories }) => {
-  const [activeCategory, setActiveCategory] = useState<number>(0);
+  // Function to get the appropriate icon based on category title
+  const getCategoryIcon = (title: string) => {
+    switch(title.toLowerCase()) {
+      case 'technical skills':
+        return <Code size={18} />;
+      case 'soft skills':
+        return <Star size={18} />;
+      case 'database skills':
+        return <Database size={18} />;
+      case 'security skills':
+        return <Shield size={18} />;
+      default:
+        return <Star size={18} />;
+    }
+  };
 
   return (
     <section className="mb-8 animate-slide-in" style={{ animationDelay: '0.5s' }}>
@@ -26,52 +40,31 @@ const Skills: React.FC<SkillsProps> = ({ categories }) => {
         <h2 className="text-2xl font-semibold">Skills</h2>
       </div>
 
-      <div className="bg-white p-5 rounded-lg border border-gray-100 shadow-sm">
-        <div className="flex flex-wrap gap-2 mb-6">
-          {categories.map((category, index) => (
-            <button
-              key={index}
-              className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
-                activeCategory === index
-                  ? 'bg-cv-primary text-white'
-                  : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-              }`}
-              onClick={() => setActiveCategory(index)}
-            >
+      <div className="bg-white p-5 rounded-lg border border-gray-100 shadow-lg hover:shadow-xl transition-all duration-300">
+        {categories.map((category, catIndex) => (
+          <div key={catIndex} className={catIndex > 0 ? "mt-6" : ""}>
+            <h3 className="text-lg font-semibold text-cv-primary mb-3 flex items-center gap-2">
+              <span className="p-1.5 bg-cv-primary bg-opacity-10 rounded-md text-cv-primary">
+                {getCategoryIcon(category.title)}
+              </span>
               {category.title}
-            </button>
-          ))}
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {categories[activeCategory].skills.map((skill, index) => (
-            <div key={index} className="group">
-              <div className="flex justify-between mb-2">
-                <span className="text-gray-700 font-medium group-hover:text-cv-primary transition-colors">
-                  {skill.name}
-                </span>
-                <div className="flex">
-                  {[...Array(5)].map((_, i) => (
-                    <Star
-                      key={i}
-                      size={14}
-                      fill={i < skill.level ? "#E86A33" : "none"}
-                      color={i < skill.level ? "#E86A33" : "#D1D5DB"}
-                      className="transition-all"
-                    />
-                  ))}
-                </div>
-              </div>
-              
-              <div className="skill-bar">
+            </h3>
+            
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+              {category.skills.map((skill, skillIndex) => (
                 <div 
-                  className="skill-progress" 
-                  style={{ '--progress-width': `${skill.level * 20}%` } as React.CSSProperties}
-                ></div>
-              </div>
+                  key={skillIndex}
+                  className="bg-white p-3 rounded-lg border border-cv-primary border-opacity-20 hover:border-opacity-100 transition-all duration-300 flex items-center gap-2 group animate-glow"
+                >
+                  <div className="h-2 w-2 rounded-full bg-cv-primary"></div>
+                  <span className="text-gray-700 group-hover:text-cv-primary transition-colors">
+                    {skill.name}
+                  </span>
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
       </div>
     </section>
   );

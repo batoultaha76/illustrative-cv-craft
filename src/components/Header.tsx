@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { User, Mail, Phone, MapPin, Linkedin, Github } from 'lucide-react';
+import { User, Mail, Phone, MapPin, Linkedin, Globe } from 'lucide-react';
 
 interface HeaderProps {
   name: string;
@@ -10,7 +10,7 @@ interface HeaderProps {
     phone: string;
     location: string;
     linkedin?: string;
-    github?: string;
+    website?: string;
   };
 }
 
@@ -31,7 +31,7 @@ const Header: React.FC<HeaderProps> = ({ name, title, contact }) => {
         
         <div className="flex flex-col gap-2 animate-fade-in" style={{ animationDelay: '0.4s' }}>
           <div className="flex items-center gap-2 group">
-            <div className="p-2 bg-cv-secondary bg-opacity-20 rounded-full transition-all duration-300 group-hover:bg-cv-primary group-hover:text-white">
+            <div className="p-2 bg-cv-primary bg-opacity-20 rounded-full transition-all duration-300 group-hover:bg-cv-primary group-hover:text-white animate-glow">
               <Mail size={16} />
             </div>
             <a href={`mailto:${contact.email}`} className="text-sm hover:text-cv-primary transition-colors">
@@ -40,7 +40,7 @@ const Header: React.FC<HeaderProps> = ({ name, title, contact }) => {
           </div>
           
           <div className="flex items-center gap-2 group">
-            <div className="p-2 bg-cv-secondary bg-opacity-20 rounded-full transition-all duration-300 group-hover:bg-cv-primary group-hover:text-white">
+            <div className="p-2 bg-cv-primary bg-opacity-20 rounded-full transition-all duration-300 group-hover:bg-cv-primary group-hover:text-white animate-glow">
               <Phone size={16} />
             </div>
             <a href={`tel:${contact.phone}`} className="text-sm hover:text-cv-primary transition-colors">
@@ -49,7 +49,7 @@ const Header: React.FC<HeaderProps> = ({ name, title, contact }) => {
           </div>
           
           <div className="flex items-center gap-2 group">
-            <div className="p-2 bg-cv-secondary bg-opacity-20 rounded-full transition-all duration-300 group-hover:bg-cv-primary group-hover:text-white">
+            <div className="p-2 bg-cv-primary bg-opacity-20 rounded-full transition-all duration-300 group-hover:bg-cv-primary group-hover:text-white animate-glow">
               <MapPin size={16} />
             </div>
             <span className="text-sm">{contact.location}</span>
@@ -61,27 +61,27 @@ const Header: React.FC<HeaderProps> = ({ name, title, contact }) => {
                 href={contact.linkedin} 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="p-2 bg-cv-secondary bg-opacity-20 rounded-full hover:bg-cv-primary hover:text-white transition-all duration-300"
+                className="p-2 bg-cv-primary bg-opacity-20 rounded-full hover:bg-cv-primary hover:text-white transition-all duration-300 animate-glow"
               >
                 <Linkedin size={16} />
               </a>
             )}
             
-            {contact.github && (
+            {contact.website && (
               <a 
-                href={contact.github} 
+                href={contact.website} 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="p-2 bg-cv-secondary bg-opacity-20 rounded-full hover:bg-cv-primary hover:text-white transition-all duration-300"
+                className="p-2 bg-cv-primary bg-opacity-20 rounded-full hover:bg-cv-primary hover:text-white transition-all duration-300 animate-glow"
               >
-                <Github size={16} />
+                <Globe size={16} />
               </a>
             )}
           </div>
         </div>
       </div>
       
-      <div className="h-0.5 bg-gradient-to-r from-cv-primary to-cv-secondary mt-4"></div>
+      <div className="h-0.5 bg-gradient-to-r from-cv-primary to-cv-accent mt-4"></div>
     </header>
   );
 };

@@ -64,11 +64,11 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				},
 				cv: {
-					primary: '#E86A33',
-					secondary: '#F8CB9C',
-					background: '#FEF7ED',
+					primary: '#9b87f5', // Changed to purple
+					secondary: '#7E69AB', // Secondary purple
+					background: '#f8f5ff', // Light purple background
 					text: '#333333',
-					accent: '#41B3A3'
+					accent: '#D946EF' // Magenta accent for glow effects
 				}
 			},
 			borderRadius: {
@@ -124,6 +124,17 @@ export default {
 				'progress-fill': {
 					'0%': { width: '0%' },
 					'100%': { width: 'var(--progress-width)' }
+				},
+				'glow': {
+					'0%': { 
+						boxShadow: '0 0 5px rgba(217, 70, 239, 0.5)' 
+					},
+					'50%': { 
+						boxShadow: '0 0 20px rgba(217, 70, 239, 0.8)' 
+					},
+					'100%': { 
+						boxShadow: '0 0 5px rgba(217, 70, 239, 0.5)' 
+					}
 				}
 			},
 			animation: {
@@ -132,7 +143,8 @@ export default {
 				'slide-in': 'slide-in 0.5s ease-out forwards',
 				'fade-in': 'fade-in 0.6s ease-out forwards',
 				'scale-up': 'scale-up 0.4s ease-out forwards',
-				'progress-fill': 'progress-fill 1s ease-out forwards'
+				'progress-fill': 'progress-fill 1s ease-out forwards',
+				'glow': 'glow 3s infinite'
 			}
 		}
 	},

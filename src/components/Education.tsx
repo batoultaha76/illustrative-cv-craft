@@ -27,24 +27,27 @@ const Education: React.FC<EducationProps> = ({ educations }) => {
         {educations.map((edu, index) => (
           <div 
             key={index} 
-            className="bg-white p-5 rounded-lg border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300"
+            className="bg-white p-5 rounded-lg border border-gray-100 shadow-lg hover:shadow-xl transition-all duration-300 animate-glow"
           >
             <div className="flex flex-col md:flex-row justify-between">
               <div>
                 <h3 className="text-lg font-semibold text-cv-primary">{edu.degree}</h3>
                 <h4 className="text-gray-600">{edu.institution}</h4>
               </div>
-              <div className="flex items-center gap-2 text-sm text-gray-500 font-medium bg-gray-100 px-3 py-1 rounded-full mt-2 md:mt-0">
+              <div className="flex items-center gap-2 text-sm text-white font-medium bg-cv-primary px-3 py-1 rounded-full mt-2 md:mt-0">
                 <Calendar size={14} />
                 <span>{edu.period}</span>
               </div>
             </div>
             
             {edu.description && (
-              <div className="mt-3">
-                <ul className="list-disc list-inside space-y-1 text-gray-700">
+              <div className="mt-3 bg-cv-primary bg-opacity-5 p-3 rounded-lg">
+                <ul className="grid grid-cols-1 md:grid-cols-2 gap-2">
                   {edu.description.map((item, i) => (
-                    <li key={i} className="text-sm leading-relaxed">{item}</li>
+                    <li key={i} className="text-sm leading-relaxed flex items-center">
+                      <span className="h-1.5 w-1.5 rounded-full bg-cv-primary mr-2"></span>
+                      <span>{item}</span>
+                    </li>
                   ))}
                 </ul>
               </div>
