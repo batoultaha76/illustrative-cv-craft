@@ -22,17 +22,17 @@ const Index = () => {
         website: "https://www.batoultaha.com",
       }
     },
-    summary: "UI/UX Designer with a creative eye and coding knowledge, blending user-centered design with front-end skills. Proficient in Figma, design systems, and usability testing, with hands-on experience in HTML, CSS, JavaScript, and no-code tools. Passionate about building intuitive, accessible, and responsive digital experiences.",
+    summary: "UI/UX Designer blending user-centered design with front-end skills. Proficient in Figma, design systems, and usability testing, with hands-on experience in HTML, CSS, JavaScript, and no-code tools.",
     experiences: [
       {
         title: "Freelance Web Developer",
         company: "Various Clients",
         period: "09/2019 - 06/2020",
         description: [
-          "Designed and built responsive interfaces with HTML, CSS, and JavaScript",
-          "Created clean, user-friendly interfaces aligned with client goals",
-          "Collaborated with clients to ensure design reflected their brand and user needs",
-          "Implemented best practices in UI/UX design principles for optimal user engagement"
+          "Designed responsive interfaces with HTML, CSS, and JS",
+          "Created clean, user-friendly UI aligned with client goals",
+          "Collaborated with clients to ensure design reflected brand",
+          "Applied UX/UI best practices for optimal user engagement"
         ]
       },
       {
@@ -40,10 +40,10 @@ const Index = () => {
         company: "International Rescue Committee",
         period: "01/2022 - 05/2023",
         description: [
-          "Collected client satisfaction and early childhood development data using digital tools",
-          "Engaged respectfully and ethically with respondents",
-          "Ensured accurate survey tracking and timely reporting",
-          "Applied data analysis techniques to extract meaningful insights from collected information"
+          "Collected client satisfaction data using digital tools",
+          "Engaged respectfully with respondents",
+          "Ensured accurate survey tracking and reporting",
+          "Applied data analysis to extract meaningful insights"
         ]
       },
       {
@@ -51,10 +51,10 @@ const Index = () => {
         company: "Oxfam-GB",
         period: "09/2022 - 10/2022",
         description: [
-          "Surveyed MSME owners/employees for project evaluation",
-          "Reviewed project guidelines and prepared for field visits",
+          "Surveyed MSME owners for project evaluation",
+          "Reviewed guidelines and prepared for field visits",
           "Managed scheduling, transport, and data entry",
-          "Contributed to impact assessment reporting for development projects"
+          "Contributed to impact assessment reporting"
         ]
       }
     ],
@@ -62,11 +62,11 @@ const Index = () => {
       {
         title: "Technical Skills",
         skills: [
-          { name: "Wireframing & Prototyping" },
-          { name: "UX Research & Testing" },
-          { name: "UI Design Principles" },
-          { name: "User Workflow Design" },
-          { name: "HTML/CSS/JavaScript" },
+          { name: "Wireframing" },
+          { name: "UX Research" },
+          { name: "UI Design" },
+          { name: "User Workflow" },
+          { name: "HTML/CSS/JS" },
           { name: "Responsive Design" }
         ]
       },
@@ -75,17 +75,17 @@ const Index = () => {
         skills: [
           { name: "Communication" },
           { name: "Collaboration" },
-          { name: "Empathy-Driven Design" },
+          { name: "Empathy" },
           { name: "Adaptability" },
           { name: "Time Management" },
-          { name: "Attention to Detail" }
+          { name: "Detail-Oriented" }
         ]
       },
       {
         title: "Other Skills",
         skills: [
           { name: "Problem Solving" },
-          { name: "User Needs Assessment" },
+          { name: "User Needs Analysis" },
           { name: "Critical Thinking" },
           { name: "Data Interpretation" },
           { name: "Heuristic Evaluation" },
@@ -99,9 +99,9 @@ const Index = () => {
         institution: "SEF Coding School",
         period: "03/2025 - 04/2025",
         description: [
-          "Learned core UX/UI skills: research, wireframing, prototyping, and no-code tools",
-          "Completed UX audits, user interviews, and full UI redesigns with Figma",
-          "Gained hands-on experience using Figma and presenting design solutions"
+          "Core UX/UI skills: research, wireframing, prototyping",
+          "Completed UX audits and user interviews",
+          "Hands-on experience with Figma"
         ]
       },
       {
@@ -109,10 +109,10 @@ const Index = () => {
         institution: "Lebanese International University",
         period: "02/2015 – 07/2018",
         description: [
-          "Engaged in IT security principles training",
-          "Studied programming languages: Java, Python, C++",
-          "Explored database management systems",
-          "Learned data manipulation and storage techniques"
+          "IT security principles training",
+          "Java, Python, and C++ programming",
+          "Database management systems",
+          "Data manipulation techniques"
         ]
       }
     ],
@@ -143,7 +143,7 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen py-10 px-4 bg-cv-background">
+    <div className="min-h-screen py-8 px-4 bg-cv-background">
       <div className="cv-container">
         <Header 
           name={cvData.personal.name} 

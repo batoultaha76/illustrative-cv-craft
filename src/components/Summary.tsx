@@ -9,19 +9,19 @@ interface SummaryProps {
 
 const Summary: React.FC<SummaryProps> = ({ text }) => {
   return (
-    <section className="mb-8 animate-slide-in" style={{ animationDelay: '0.3s' }}>
-      <div className="flex items-center gap-2 mb-4">
+    <section className="mb-5 animate-slide-in" style={{ animationDelay: '0.3s' }}>
+      <div className="flex items-center gap-2 mb-2">
         <div className="p-2 bg-cv-primary text-white rounded-full">
-          <User size={20} />
+          <User size={18} />
         </div>
         <h2 className="text-2xl font-semibold">Summary</h2>
       </div>
       
-      <div className="bg-white p-5 rounded-lg border border-gray-100 shadow-lg hover:shadow-xl transition-all duration-300 animate-glow">
+      <div className="bg-white p-3 rounded-lg border border-gray-100 shadow-lg hover:shadow-xl transition-all duration-300 animate-glow">
         <TooltipProvider>
           <Tooltip>
             <TooltipTrigger asChild>
-              <p className="text-gray-700 leading-relaxed">{text}</p>
+              <p className="text-sm text-gray-700 leading-snug">{text}</p>
             </TooltipTrigger>
             <TooltipContent side="bottom" className="max-w-md bg-cv-primary text-white">
               <p>This summary highlights your key qualifications and approach to design</p>
