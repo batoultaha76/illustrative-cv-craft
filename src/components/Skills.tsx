@@ -42,7 +42,7 @@ const Skills: React.FC<SkillsProps> = ({ categories }) => {
         <h2 className="text-2xl font-semibold">Skills</h2>
       </div>
 
-      <div className="bg-white p-4 rounded-lg border border-gray-100 shadow-lg hover:shadow-xl transition-all duration-300">
+      <div className="bg-white p-4 rounded-lg border border-gray-100 shadow-lg hover:shadow-xl transition-all duration-300 animate-glow">
         <div className="grid grid-cols-3 gap-4">
           {categories.map((category, catIndex) => (
             <div key={catIndex} className="flex flex-col h-full">
