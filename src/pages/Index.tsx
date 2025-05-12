@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Header from '../components/Header';
 import Summary from '../components/Summary';
@@ -27,35 +26,41 @@ const Index = () => {
       {
         title: "Freelance Web Developer",
         company: "Various Clients",
+        location: "Remote",
         period: "09/2019 - 06/2020",
         description: [
           "Designed responsive interfaces with HTML, CSS, and JS",
           "Created clean, user-friendly UI aligned with client goals",
           "Collaborated with clients to ensure design reflected brand",
           "Applied UX/UI best practices for optimal user engagement"
-        ]
+        ],
+        type: "work"
       },
       {
         title: "Consultant-Enumerator",
         company: "International Rescue Committee",
+        location: "Lebanon",
         period: "01/2022 - 05/2023",
         description: [
           "Collected client satisfaction data using digital tools",
           "Engaged respectfully with respondents",
           "Ensured accurate survey tracking and reporting",
           "Applied data analysis to extract meaningful insights"
-        ]
+        ],
+        type: "work"
       },
       {
         title: "Consultant-Enumerator",
         company: "Oxfam-GB",
+        location: "Lebanon",
         period: "09/2022 - 10/2022",
         description: [
           "Surveyed MSME owners for project evaluation",
           "Reviewed guidelines and prepared for field visits",
           "Managed scheduling, transport, and data entry",
           "Contributed to impact assessment reporting"
-        ]
+        ],
+        type: "work"
       }
     ],
     skills: [
@@ -151,7 +156,7 @@ const Index = () => {
           contact={cvData.personal.contact} 
         />
         <Summary text={cvData.summary} />
-        <Experience experiences={cvData.experiences} />
+        <Experience items={cvData.experiences} />
         <Skills categories={cvData.skills} />
         <Education educations={cvData.education} />
         <Certificates certificates={cvData.certificates} />

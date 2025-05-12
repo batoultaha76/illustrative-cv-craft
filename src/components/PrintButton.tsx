@@ -1,20 +1,23 @@
-
 import React from 'react';
+import { Download } from 'lucide-react';
 
 const PrintButton = () => {
-  const handlePrint = () => {
-    window.print();
+  const handleDownload = () => {
+    const link = document.createElement('a');
+    link.href = '/batoultaha-cv.pdf';
+    link.download = 'batoultaha-cv.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
 
   return (
     <button
-      onClick={handlePrint}
+      onClick={handleDownload}
       className="no-print fixed bottom-4 right-4 bg-cv-primary text-white py-2 px-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-2 hover:bg-cv-accent animate-glow text-sm"
     >
-      <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" />
-      </svg>
-      Print CV
+      <Download size={16} />
+      Download CV
     </button>
   );
 };

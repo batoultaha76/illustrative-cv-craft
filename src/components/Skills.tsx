@@ -1,6 +1,5 @@
-
 import React from 'react';
-import { Star, Code, Database, Shield, Brain, Heart, LayoutGrid } from 'lucide-react';
+import { Star, Code, Database, Shield, Brain, Users, LayoutGrid } from 'lucide-react';
 
 interface SkillCategory {
   title: string;
@@ -21,7 +20,7 @@ const Skills: React.FC<SkillsProps> = ({ categories }) => {
       case 'technical skills':
         return <Code size={16} />;
       case 'soft skills':
-        return <Heart size={16} />;
+        return <Users size={16} />;
       case 'other skills':
         return <Brain size={16} />;
       case 'database skills':

@@ -1,7 +1,5 @@
-
 import React from 'react';
 import { User } from 'lucide-react';
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 
 interface SummaryProps {
   text: string;
@@ -18,16 +16,7 @@ const Summary: React.FC<SummaryProps> = ({ text }) => {
       </div>
       
       <div className="bg-white p-3 rounded-lg border border-gray-100 shadow-lg hover:shadow-xl transition-all duration-300 animate-glow">
-        <TooltipProvider>
-          <Tooltip>
-            <TooltipTrigger asChild>
-              <p className="text-sm text-gray-700 leading-snug">{text}</p>
-            </TooltipTrigger>
-            <TooltipContent side="bottom" className="max-w-md bg-cv-primary text-white">
-              <p>This summary highlights your key qualifications and approach to design</p>
-            </TooltipContent>
-          </Tooltip>
-        </TooltipProvider>
+        <p className="text-sm text-gray-700 leading-snug">{text}</p>
       </div>
     </section>
   );

@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Globe } from 'lucide-react';
 
@@ -13,8 +12,8 @@ interface LanguagesProps {
 
 const Languages: React.FC<LanguagesProps> = ({ languages }) => {
   return (
-    <section className="mb-5 animate-slide-in" style={{ animationDelay: '0.8s' }}>
-      <div className="flex items-center gap-2 mb-3">
+    <section className="mb-4 animate-slide-in print:hidden" style={{ animationDelay: '0.8s' }}>
+      <div className="flex items-center gap-2 mb-2">
         <div className="p-2 bg-cv-primary text-white rounded-full">
           <Globe size={18} />
         </div>
@@ -26,10 +25,10 @@ const Languages: React.FC<LanguagesProps> = ({ languages }) => {
           {languages.map((lang, index) => (
             <div 
               key={index} 
-              className="px-3 py-2 bg-gradient-to-br from-cv-primary/20 to-cv-primary/5 rounded-full hover:from-cv-primary hover:to-cv-accent hover:text-white transition-all duration-500"
+              className="group px-3 py-2 bg-gradient-to-br from-cv-primary/20 to-cv-primary/5 rounded-full hover:from-cv-primary hover:to-cv-accent hover:text-white transition-all duration-500 cursor-pointer"
             >
-              <span className="font-medium text-sm">{lang.name}</span>
-              {lang.level && <span className="ml-1 text-xs opacity-70">{lang.level}</span>}
+              <span className="font-medium text-sm group-hover:scale-110 transition-transform duration-300">{lang.name}</span>
+              {lang.level && <span className="ml-1 text-xs opacity-70 group-hover:opacity-90">{lang.level}</span>}
             </div>
           ))}
         </div>
